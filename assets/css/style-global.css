@@ -1,0 +1,261 @@
+/* Reset básico e box-sizing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f8f9fa; /* Cor de fundo mais clara e moderna */
+  font-family: 'Roboto', sans-serif; /* Fonte moderna */
+  color: #343a40; /* Cor de texto escura para contraste */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #b5f0ec; /* Cor de fundo azul */
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20%;
+  height: auto;
+  border-radius: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  position: sticky, absolute; /* Fixa a navbar no topo */
+  top: 0;
+  z-index: 1000; /* Garante que a navbar está acima de outros conteúdos */
+}
+
+.navbar-brand {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.25rem;
+}
+
+.navbar-toggler {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem 0.75rem;
+  color: #fff; /* Cor do ícone do menu */
+  display: none; /* Oculto por padrão em telas maiores */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* Ícone de menu branco */
+}
+
+.navbar-collapse {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end; /* Alinha itens à direita */
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none;
+  align-items: center; /* Alinha verticalmente os itens da navbar */
+}
+
+.nav-item {
+  margin-left: 1rem;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 0.5rem 1rem; /* Adicionado padding para melhor toque em mobile */
+  border-radius: 5px; /* Adicionado border-radius para destaque visual */
+}
+
+.nav-link:hover {
+  color: #f0f0f0; /* Cor mais clara no hover */
+  background-color: rgba(255, 255, 255, 0.1); /* Feedback visual no hover */
+}
+
+.logouf {
+  background-color: #dc3545; /* Cor vermelha para Logout */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  text-decoration: none; /* Para links */
+}
+
+.logouf:hover {
+  background-color: #c82333; /* Cor mais escura no hover */
+}
+
+/* Conteúdo principal */
+.principal {
+  background-color: #5d22ff;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 900px;
+  flex-grow: 1;
+  position: absolute;
+}
+
+/* Carrossel */
+.carousel {
+  height: 30vh;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para controles */
+  opacity: 0.8; /* Melhora a visibilidade dos controles */
+  transition: opacity 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1; /* Opacidade total no hover */
+}
+
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  background-color: #5089c5cc; /* Cor azul para o botão dropdown */
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Transição suave na cor de fundo */
+}
+
+.dropdown-toggle:hover, .dropdown-toggle:focus {
+  background-color: #3d70a3cc; /* Cor ligeiramente mais escura no hover/focus */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adiciona uma leve sombra no hover/focus */
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  border-radius: 5px;
+  overflow: hidden;
+  right: 0; /* Alinha o dropdown à direita do botão */
+  top: 100%; /* Inicia abaixo do botão */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  color: #343a40;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-content .dropdown-divider {
+  border-top: 1px solid #dee2e6; /* Linha separadora */
+  margin: 0.5rem 0;
+}
+
+.dropdown-item { /* Estilos para itens do dropdown */
+  padding: 0.25rem 1rem;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: #e9ecef;
+}
+
+.desc {
+  padding: 1rem;
+  text-align: center;
+  color: #fff; /* Garante que o texto desc seja visível no fundo roxo */
+}
+
+/* Media query para responsividade em telas menores */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Altera para coluna em telas pequenas */
+    align-items: flex-start; /* Alinha itens à esquerda em telas pequenas */
+    padding: 0.5rem; /* Reduz o padding em telas pequenas */
+  }
+
+  .navbar-brand {
+    margin-bottom: 0.5rem; /* Espaço abaixo do logo em telas pequenas */
+  }
+
+  .navbar-toggler {
+    display: block; /* Exibe o toggler em telas pequenas */
+  }
+
+  .navbar-collapse {
+    display: none; /* Oculta o menu por padrão em telas pequenas */
+    width: 100%; /* Ocupa a largura total */
+    flex-direction: column; /* Menu em coluna */
+    justify-content: flex-start; /* Alinha itens no início */
+    align-items: stretch; /* Estica os itens para ocupar a largura */
+  }
+
+  .navbar-collapse.show {
+    display: flex; /* Exibe o menu quando a classe 'show' é adicionada (JavaScript) */
+  }
+
+  .navbar-nav {
+    flex-direction: column; /* Navegação em coluna em telas pequenas */
+    width: 100%; /* Ocupa a largura total do collapse */
+  }
+
+  .nav-item {
+    margin-left: 0; /* Remove margem esquerda */
+    margin-bottom: 0.5rem; /* Adiciona margem inferior entre os itens */
+    width: 100%; /* Ocupa a largura total do menu */
+    text-align: center; /* Centraliza o texto nos links */
+  }
+
+  .nav-link {
+    display: block; /* Links ocupam toda a largura do item */
+  }
+
+  .principal {
+    margin: 1rem auto; /* Reduz a margem do conteúdo principal */
+    padding: 1.5rem; /* Reduz o padding do conteúdo principal */
+    width: 95%; /* Aumenta a largura em telas menores */
+  }
+
+  .carousel {
+    height: 40vh; /* Aumenta a altura do carrossel em telas menores para melhor visualização */
+    margin-top: 1rem; /* Reduz a margem superior do carrossel */
+  }
+
+  .dropdown-content {
+    right: auto; /* Reseta o alinhamento à direita */
+    left: 0; /* Alinha o dropdown à esquerda em telas pequenas */
+    width: 100%; /* Dropdown ocupa a largura total em telas pequenas */
+  }
+}
